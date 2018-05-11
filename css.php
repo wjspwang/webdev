@@ -4,6 +4,11 @@
 
 body {
     background-image: url("header.jpg");
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
 
 }
 #login{
@@ -11,9 +16,10 @@ body {
 }
 #title.head{
 	font-family: 'Tangerine', serif;
-    font-size: 48px;
+    font-size: 100px;
 	text-align: center;
 	background-image: url("header.jpg");
+	font-weight: bold;
 }
 ul {
     list-style-type: none;

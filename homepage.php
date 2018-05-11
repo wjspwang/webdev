@@ -4,7 +4,7 @@
 
 <body>
 <div id="title" class="head" align = "left">
-Amadeus: Online Comic and Manga Shop <img height="50px" width="50px" src="coffee.png">
+Amadeus: Online Comic and Manga Shop <img height="100px" width="100x" src="coffee.png">
 </div>
 <div id="login" class="head" align="right">
 <form action = "login1.php" method = "post">
@@ -24,7 +24,6 @@ Don't have an account yet ?
   <li><a href="#contact">Contact</a></li>
   <li><a href="#about">About</a></li>
 </ul>
-<hr>-</hr>
 <div class ="background-image"></div>
 
 <body>
