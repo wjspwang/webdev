@@ -1,7 +1,9 @@
 <html>
+<?php session_start(); ?>
+<?php include 'css.php';?>
+<head><meta http-equiv="refresh" content="3;url=mem_homepage.php" /></head>
 <body>
 <?php
-session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -30,12 +32,9 @@ $sql = "SELECT id, firstname,lastname,email,gender from myusers WHERE username =
 $result = $conn->query($sql);
 
 if($result->num_rows > 0 ){
-	echo "Welcome! ".$user."!<br><br>";
-	while($row = $result->fetch_assoc()){
-		echo "ID: " . $row["id"]. "<br>Name: " .$row["firstname"]. "<br>Last name: " .$row["lastname"].
-		"<br>E-mail: " .$row["email"]. "<br>Gender: " .$row["gender"]."<br>";
-		$_SESSION["id"] = "$row[id]";
-	}
+	echo "<p align='center'>Welcome! ".$user."! <br> redirecting in 3 seconds...</p>";
+	$_SESSION["username"] = $user;
+	
 }else{	
 	echo "User not Found ! Please try again!<br> ";
 	if (!$result) {

@@ -1,4 +1,6 @@
 <html>
+<?php include 'header.php' ?>
+<?php include 'css.php';?>
 <?php 
 $servername = "localhost";
 $username = "root";
@@ -48,15 +50,33 @@ $user = $pass = $bday = $gender = "";
 
 
 <body>
+<div class="form" align="center">
 <form action ="register1.php"  method = "post">
 -Sign up here, Komrade-<br>
 -Glory to Arstotzka-<br>
-First name: <input type = "text" name = "fname" pattern="[a-zA-Z]*"  Required><br>
-Last name: <input type = "text" name = "lname" pattern="[a-zA-Z]*"  Required><br>
-Mobile number: <input type = "text" name = "mnum" onkeypress="return isNumberKey(event)" maxlength="11" Required><br>
-E-mail: <input type = "text" name = "email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"><br>
-Username:<input type = "text" name = "user" ><br>
-Password: <input type = "password" name = "pass" Required><br>
+<table>
+<tr>
+<td>First name:</td> 
+<td><input type = "text" name = "fname" pattern="[a-zA-Z]*"  Required><br></td>
+</tr>
+<tr>
+<td>Last name: </td>
+<td><input type = "text" name = "lname" pattern="[a-zA-Z]*"  Required><br></td>
+</tr>
+<td>Mobile number: </td>
+<td><input type = "text" name = "mnum" onkeypress="return isNumberKey(event)" maxlength="11" Required><br></td>
+<tr>
+<td>E-mail: </td>
+<td><input type = "text" name = "email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"><br></td>
+</tr>
+<tr>
+<td>Username:</td>
+<td><input type = "text" name = "user" ><br></td>
+</tr>
+<tr>
+<td>Password: </td>
+<td><input type = "password" name = "pass" Required><br></td>
+</tr>
 <!--Birthday: <select name ="month"> 
 <option name ="month" value="1">1</option>
 <option name ="month" value="2">2</option>
@@ -127,8 +147,16 @@ Password: <input type = "password" name = "pass" Required><br>
 <option name ="year" value="2009">2009</option>
 <option name ="year" value="2010">2010</option>
 </select><br>-->
-Gender: <input type="radio" name = "gender" value = "male">Male <input type="radio" name = "gender" value = "female">Female <br>
+<tr>
+<td>Gender: </td>
+<td><input type="radio" name = "gender" value = "male">Male <input type="radio" name = "gender" value = "female">Female <br></form></td>
+</tr>
+<tr>
+<td><button class = "button">Sign Up</button></form></td>
 <!--<input type="checkbox" name="agree" onchange="activateButton(this)" required> I agree with Terms and Conditions <br>-->
-<input type = "submit" value = "Sign up">
+
+<form action="homepage.php"><td><button class = "button" onclick="history.back()">Back to Home</button></td></form>
+</tr>
+</div>
 </body>
 </html>

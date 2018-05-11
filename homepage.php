@@ -1,17 +1,31 @@
 <html>
+<?php include 'session.php'?>
+<?php include 'css.php';?>
+
 <body>
-Amadeus: Online Comic and Manga Shop
-<div align="right">
+<div id="title" class="head" align = "left">
+Amadeus: Online Comic and Manga Shop <img height="50px" width="50px" src="coffee.png">
+</div>
+<div id="login" class="head" align="right">
 <form action = "login1.php" method = "post">
+
 -Login to Purchase!-<br>
-Username: <input type = "text" name = "user">
-Password: <input type = "password" name = "pass">
-<input name="login" type="submit" value="Login"></form>
+Username: <input type = "text" name = "user" required>
+Password: <input type = "password" name = "pass" required>
+<button class="button">Login</form></button>
 Don't have an account yet ?
 <form action = "register.php">
-<input type="submit" value="Sign up"> 
+<button class="button"> Sign up</button>
 </form>
 </div>
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+<hr>-</hr>
+<div class ="background-image"></div>
 
 <body>
 </html>

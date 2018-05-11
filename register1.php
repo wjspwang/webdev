@@ -46,8 +46,8 @@ $month = $day = $year = "";
 
 $sql = "INSERT INTO myusers(firstname,
 lastname, email, username, password,
- gender) VALUES('".$fname."','".$lname."',
- '".$email."','".$user."','".$pass."','".$gender."');";
+ gender,user_type) VALUES('".$fname."','".$lname."',
+ '".$email."','".$user."','".$pass."','".$gender."', 2);";
 	  
 	  
 	  if($conn->query($sql) === TRUE ){
