@@ -1,25 +1,42 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 <style>
-
-body {
-    background-image: url("header.jpg");
-    margin-top: 50px;
+body{
     margin-bottom: 50px;
     margin-right: 50px;
     margin-left: 50px;
 }
-
+#login.head{
+	align: left;
+	
 }
-#login{
-	background-image: url("background.jpg");
+#welcome{
+	width: 100%;
+}
+#welcome_text{
+font-size: 150%;
+font-weight: bold;
+}
+#login.head{
+text-align: center;
+}
+div.header{
+	background-image: url("anime_header.jpg");
+	background-size: cover;
+	
+}
+div.content{
+background-image: url("header.jpg");
+	backround-size: cover;
+	
 }
 #title.head{
 	font-family: 'Tangerine', serif;
-    font-size: 100px;
+    font-size: 400%;
 	text-align: center;
-	background-image: url("header.jpg");
 	font-weight: bold;
+	background-color:white;
+
 }
 ul {
     list-style-type: none;
@@ -60,6 +77,9 @@ form{
 	background-image: url("minimalist_background_iv-wallpaper-1920x1440");
 	font-size: large;
 
+}
+div.content{
+	background-image: url("header.jpg");
 }
 
 

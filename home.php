@@ -45,9 +45,6 @@ Don't have an account yet ?
   <li><a href="shopping_cart.php">Shopping cart</a></li>
 </ul>
 </div>
-<div class="content">
-home stuff
-</div>
 
 <body>
 </html>

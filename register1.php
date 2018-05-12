@@ -1,4 +1,6 @@
 <html>
+<?php include 'css.php';?>
+<head><meta http-equiv="refresh" content="3;url=login.php" /></head>
 <?php
 $servername = "localhost";
 $username = "root";
