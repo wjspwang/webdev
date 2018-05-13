@@ -14,7 +14,7 @@ if($conn -> connect_error){
 	die("Connection failed: ". $conn->connect_error);
 }
 
-$user = $pass = "";
+$user = $pass = $user_type = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$user = valid_input($_POST["user"]);
@@ -28,12 +28,16 @@ function valid_input($data){
 	return $data;
 	}
 	
-$sql = "SELECT id, firstname,lastname,email,gender from myusers WHERE username = '".$user."' AND password = '".$pass."';";
+$sql = "SELECT id, firstname,lastname,email,gender,user_type from myusers WHERE username = '".$user."' AND password = '".$pass."';";
 $result = $conn->query($sql);
 
 if($result->num_rows > 0 ){
 	echo "<p align='center'>Welcome! ".$user."! <br> redirecting in 3 seconds...</p>";
 	$_SESSION["username"] = $user;
+	$sql = "SELECT user_type FROM myusers WHERE username = '".$user."' AND password = '".$pass."'" ;
+	$result = mysqli_query($conn,$sql);
+	$row=mysqli_fetch_assoc($result);
+	$_SESSION["user_type"] = $row["user_type"];
 	
 }else{	
 	echo "User not Found ! Please try again!<br> ";

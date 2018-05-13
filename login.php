@@ -22,25 +22,34 @@ Amadeus: Online Comic and Manga Shop <img height="100px" width="100x" src="coffe
 </div>
 <ul>
   <li><a class="active" href="homepage.php">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
-  <li><a href="login.php">Login</a></li>
+  <!--<li><a href="news.php">News</a></li>
+  <li><a href="contact.php">Contact</a></li>
+  <li><a href="about.php">About</a></li>
+  <li><a href="login.php">Login</a></li>-->
 </ul>
 </div>
 <div class="content">
 <br>
 <div id="login" class="head" ">
 <form action = "login1.php" method = "post">
+<table align = "center">
+<th align="center">--Login to Purchase!--</th><br> 
+<tr>
+<td>Username:</td><td><input type = "text" name = "user" required></td>
+</tr>
+<tr>
+<td>Password:</td><td><input type = "password" name = "pass" required></td>
+</tr>
+<tr>
+<td><button class="button">Login</form></button></td>
+<td></td>
+</tr>
+<tr>
+<td>New to Amadeus?</td>
+<td><a href="register.php">Sign up here</a></td>
+</tr>
+</table>
 
---Login to Purchase!-<br> 
-Username:<input type = "text" name = "user" required>
-Password: <input type = "password" name = "pass" required>
-<button class="button">Login</form></button>
-Don't have an account yet ?
-<form action = "register.php">
-<button class="button"> Sign up</button>
-</form>
 </div>
 </div>
 

@@ -1,12 +1,18 @@
 <html>
-<?php 
+<?php
 session_start();
-if(!isset($_SESSION['username'])){
+if(!isset($_SESSION['username']) && !isset($_SESSION['user_type']) ){
    header("Location:homepage.php");
 }
 ?>
 <?php include 'css.php';?>
 <body>
+<table id="welcome">
+<tr>
+<td><p id="welcome_text" align="left">Welcome! <?php echo $_SESSION["username"]; ?></p></td>
+<td align="right"><a href='logout.php'><button class="button">Log Out</button></a></td>
+</tr>
+</table>
 <div class="header">
 <div id="title" class="head">
 Amadeus: Online Comic and Manga Shop <img height="100px" width="100x" src="coffee.png">
@@ -20,12 +26,10 @@ Amadeus: Online Comic and Manga Shop <img height="100px" width="100x" src="coffe
 <br>
 <br>
 <br>
-<table id="welcome">
-<tr>
-<td><p id="welcome_text" align="left">Welcome! <?php echo $_SESSION["username"]; ?></p></td>
-<td align="right"><a href='logout.php'><button class="button">Log Out</button></a></td>
-</tr>
-</table>
+<br>
+<br>
+<br>
+</div>
 <!--<form action = "login1.php" method = "post">
 
 --Login to Purchase!-<br> 
@@ -39,15 +43,14 @@ Don't have an account yet ?
 </div>
 <ul>
   <li><a class="active" href="mem_homepage.php">Home</a></li>
-  <li><a href="news.php">News</a></li>
+  <!--<li><a href="news.php">News</a></li>
   <li><a href="contact.php">Contact</a></li>
-  <li><a href="about.php">About</a></li>
+  <li><a href="about.php">About</a></li>-->
+  <li><a href="addProduct.php">Add Product</a></li>
   <li><a href="shopping_cart.php">Shopping cart</a></li>
 </ul>
 </div>
 <div class="content">
 home stuff
 </div>
-
-<body>
 </html>

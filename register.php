@@ -52,8 +52,6 @@ $user = $pass = $bday = $gender = "";
 <body>
 <div class="form" align="center">
 <form action ="register1.php"  method = "post">
--Sign up here, Komrade-<br>
--Glory to Arstotzka-<br>
 <table>
 <tr>
 <td>First name:</td> 
@@ -150,6 +148,12 @@ $user = $pass = $bday = $gender = "";
 <tr>
 <td>Gender: </td>
 <td><input type="radio" name = "gender" value = "male">Male <input type="radio" name = "gender" value = "female">Female <br></form></td>
+</tr>
+<tr>
+<td>User Type:</td><td><select name="user_type" required>
+	<option value = 1>Admin</option>
+	<option value = 2>Customer</option>
+</select></td>
 </tr>
 <tr>
 <td><button class = "button">Sign Up</button></form></td>

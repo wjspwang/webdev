@@ -10,20 +10,22 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if($conn -> connect_error){
 	die("Connection failed: ". $conn->connect_error);
 }
-$lname = $fname = $email = "";
+$lname = $fname = $email = $mnum = "";
 $user = $pass = $bday = $gender = "";
 $month = $day = $year = "";
+
 
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$fname = valid_input($_POST["fname"]);
 		$lname = valid_input($_POST["lname"]);
-		//$mnum = valid_input($_POST["mnum"]);
+		$mnum = valid_input($_POST["mnum"]);
 		$email = valid_input($_POST["email"]);
 		$user = valid_input($_POST["user"]);
 		$pass = valid_input($_POST["pass"]);
 		//$date = $_POST["year"]."-".$_POST["month"]."-".$_POST["day"];
 		$gender = valid_input($_POST["gender"]);
+		$user_type = $_POST["user_type"];
 	}
 	
 	
@@ -47,9 +49,9 @@ $month = $day = $year = "";
 
 
 $sql = "INSERT INTO myusers(firstname,
-lastname, email, username, password,
- gender,user_type) VALUES('".$fname."','".$lname."',
- '".$email."','".$user."','".$pass."','".$gender."', 2);";
+lastname,mobile_number, email, username, password,
+ gender,user_type,credits) VALUES('".$fname."','".$lname."','".$mnum."',
+ '".$email."','".$user."','".$pass."','".$gender."', '".$user_type."', 0);";
 	  
 	  
 	  if($conn->query($sql) === TRUE ){
