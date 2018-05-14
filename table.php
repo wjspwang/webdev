@@ -14,7 +14,7 @@ echo "Connected successfully " ;
 //CREATE TABLE
 	
     $sql = "CREATE TABLE myusers (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(50) NOT NULL,
     lastname VARCHAR(40) NOT NULL,
     mobile_number int(11),
@@ -28,13 +28,22 @@ echo "Connected successfully " ;
 
 
     $sql .= "CREATE TABLE products (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    prod_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Photo VARCHAR(100) NOT NULL,
     title VARCHAR(100),
 	author VARCHAR(100),
-	cost VARCHAR(100),
-    pub_date DATETIME
+	cost float,
+    pub_date DATETIME 
     ); ";
+	
+	$sql .= "CREATE TABLE shopping_cart (
+    cart_id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user_id int NOT NULL,
+    prod_id int NOT NULL,
+	total int,
+    FOREIGN KEY (user_id) REFERENCES myusers(user_id),
+	FOREIGN KEY (prod_id) REFERENCES products(prod_id)
+);";
 
     if ($conn->multi_query($sql) === TRUE) {
         echo "Tables created successfully <br/>";

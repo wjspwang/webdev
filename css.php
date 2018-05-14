@@ -1,11 +1,6 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 <style>
-body{
-    margin-bottom: 50px;
-    margin-right: 50px;
-    margin-left: 50px;
-}
 #login.head{
 	align: left;
 	
@@ -80,6 +75,9 @@ form{
 }
 div.content{
 	background-image: url("header.jpg");
+}
+div.container{
+	text-align:center;
 }
 
 

@@ -100,12 +100,11 @@ Amadeus: Online Comic and Manga Shop <img height="100px" width="100x" src="coffe
 <br>
 </div>
 <ul>
-  <li><a class="active" href="admin_homepage.php">Home</a></li>
+  <li><a class="active" href="cust_homepage.php">Home</a></li>
   <!--<li><a href="news.php">News</a></li>
   <li><a href="contact.php">Contact</a></li>
   <li><a href="about.php">About</a></li>-->
-  <li><a href="addProduct.php">Add Product</a></li>
-  <li><a href="shopping_cart.php">Shopping cart</a></li>
+  <li><a href="cust_cart.php">Shopping cart</a></li>
 </ul>
 </div>
 <div class="container" style="width:7000px;">

@@ -30,7 +30,7 @@ Amadeus: Online Comic and Manga Shop <img height="100px" width="100x" src="coffe
 <br>
 </div>
 <ul name='filename'>
-  <li><a class="active" href="mem_homepage.php">Home</a></li>
+  <li><a class="active" href="admin_homepage.php">Home</a></li>
   <!--<li><a href="news.php">News</a></li>
   <li><a href="contact.php">Contact</a></li>
   <li><a href="about.php">About</a></li>-->

@@ -10,7 +10,7 @@ if($conn -> connect_error){
 }
 ?>
 <head>
-
+<?php include 'css.php';?>
 </head>
 <style>
   article, aside, figure, footer, header, hgroup, 
@@ -39,9 +39,8 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['user_type']) ){
             }
         }
 </script>
-<?php include 'css.php';?>
 
-<body>
+<body >
 <table id="welcome">
 <tr>
 <td><p id="welcome_text" align="left">Welcome! <?php echo $_SESSION["username"]; ?></p></td>
@@ -77,19 +76,18 @@ Don't have an account yet ?
 </form>-->
 </div>
 <ul>
-  <li><a class="active" href="mem_homepage.php">Home</a></li>
+  <li><a class="active" href="admin_homepage.php">Home</a></li>
   <!--<li><a href="news.php">News</a></li>
   <li><a href="contact.php">Contact</a></li>
   <li><a href="about.php">About</a></li>-->
   <li><a href="addProduct.php">Add Product</a></li>
-  <!--<li><a href="shopping_cart.php">Shopping cart</a></li>-->
+  <li><a href="shopping_cart.php">Shopping cart</a></li>
 </ul>
 </div>
 <div class="content">
 	<table>
 		<form enctype="multipart/form-data" action="addProduct1.php" method="POST">
 			
-			<img id="blah" src="#" alt="your image" />
 			<tr>
 				<td>Upload image: </td>
 				<td><input type="file" onchange="readURL(this)" name="photo" /></td>
