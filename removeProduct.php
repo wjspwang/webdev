@@ -109,7 +109,7 @@ Don't have an account yet ?
 								while($row = $result->fetch_array()){
 									echo "<tr>";
 									echo "<td>" . $row['prod_id'] . "</td>";
-									echo "<td>" . $row['Photo'] . "</td>";
+									echo "<td><img style= 'margin-top:10px' height='40px' width='30px' src='". $row['Photo'] . "'</td>";
 									echo "<td>" . $row['title'] . "</td>";
 									echo "<td>" . $row['author'] . "</td>";
 									echo "<td>" . $row['cost'] . "</td>";
