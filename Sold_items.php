@@ -88,34 +88,45 @@ Don't have an account yet ?
 </div>
 <div class="content">
 	<table>
-		<form enctype="multipart/form-data" action="addProduct1.php" method="POST">
-			
 			<tr>
-				<td>Upload image: </td>
-				<td><input type="file" onchange="readURL(this)" name="photo" /></td>
+				<td>Products</td>
+				<td>
+					<?php
+						$sql = "SELECT * FROM order_tbl";
+						if($result = $conn->query($sql)){
+							if($result->num_rows > 0){
+								echo "<table>";
+								echo "<tr>";
+								echo "<th>ORDER ID</th>";
+								echo "<th>USER ID</th>";
+								echo "<th>ITEMS PURCHASED</th>";
+								echo "<th>Total Cost</th>";
+								//echo "<th>Genre</th>";
+								echo "</tr>";
+								while($row = $result->fetch_array()){
+									echo "<tr>";
+									echo "<td>" . $row['ord_id'] . "</td>";
+									echo "<td>" . $row['user_id'] . "</td>";
+									echo "<td>" . $row['quantity'] . "</td>";
+									echo "<td>" . $row['total'] . "</td>";
+									echo "</tr>";
+								}
+								echo "</table>";
+								// Free result set
+								$result->free();
+							} else{
+								echo "No records matching your query were found.";
+								}
+						} else{
+							echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+							}
+ 
+					// Close connection
+					$conn->close();
+					?>
+				</td>
 			</tr>
-			<tr>
-				<td>Title:</td>
-				<td><input type="text" name="title" ></td>
-			</tr>
-			<tr>
-				<td>Author:</td>
-				<td><input type="text" name="author" ></td>
-			</tr>
-			<tr>
-				<td>Cost:</td>
-				<td><input type="text" name="cost" ></td>
-			</tr>
-			<tr>
-				<td>Publish Date:</td>
-				<td><input type="text" name="pub_date" ></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" value="Add" ></td>
-			</tr>
-		</form>
 	</table>
-</dive>
+</div>
 </body>
 </html>

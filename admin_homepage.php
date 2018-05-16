@@ -47,7 +47,10 @@ Don't have an account yet ?
   <li><a href="contact.php">Contact</a></li>
   <li><a href="about.php">About</a></li>-->
   <li><a href="addProduct.php">Add Product</a></li>
+  <li><a href="editProduct.php">Edit Product</a></li>
+  <li><a href="removeProduct.php">Remove Product</a></li>
   <li><a href="shopping_cart.php">Shopping cart</a></li>
+  <li><a href="Sold_items.php">Ordered Items</a></li>
 </ul>
 </div>
 <div class="content">

@@ -13,6 +13,7 @@ if($conn -> connect_error){
 
 $photo = "";
  $title = $author = $cost = $pub_date = "";
+ $selected_id = "";
 
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -22,6 +23,7 @@ $photo = "";
 		$author = valid_input($_POST["author"]);
 		$cost = valid_input($_POST["cost"]);
 		$pub_date = valid_input($_POST["pub_date"]);
+		$selected_id = valid_input($_POST["selected_id"]);
 	}
 	
 	
@@ -44,13 +46,12 @@ $photo = "";
 	  
 
 
-$sql = "INSERT INTO products(Photo,
-title,author,cost, pub_date) VALUES('".$uploadfile."','".$title."','".$author."',
- '".$cost."','".$pub_date."');";
+$sql = "Update products SET Photo = '".$uploadfile."',
+title = '".$title."', author = '".$author."' , cost = '".$cost."' , pub_date = '".$pub_date."' WHERE prod_id = ".$selected_id.";";
 	  
 	  
 	  if($conn->query($sql) === TRUE ){
-		echo "Add Product Success <br>";
+		echo "Edit Product Success <br>";
 		}else {
 		echo "Error " .$sql."<br>". $conn->error;
 		}

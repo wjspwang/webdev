@@ -88,8 +88,53 @@ Don't have an account yet ?
 </div>
 <div class="content">
 	<table>
-		<form enctype="multipart/form-data" action="addProduct1.php" method="POST">
-			
+		<form enctype="multipart/form-data" action="editProduct1.php" method="POST">
+			<tr>
+				<td>Products</td>
+				<td>
+					<?php
+						$sql = "SELECT * FROM products";
+						if($result = $conn->query($sql)){
+							if($result->num_rows > 0){
+								echo "<table>";
+								echo "<tr>";
+								echo "<th>Product ID</th>";
+								echo "<th>Photo</th>";
+								echo "<th>Title</th>";
+								echo "<th>Author</th>";
+								echo "<th>Cost</th>";
+								//echo "<th>Genre</th>";
+								echo "<th>Publish Date</th>";
+								echo "</tr>";
+								while($row = $result->fetch_array()){
+									echo "<tr>";
+									echo "<td>" . $row['prod_id'] . "</td>";
+									echo "<td><img style= 'margin-top:10px' height='40px' width='30px' src='". $row['Photo'] . "'</td>";
+									echo "<td>" . $row['title'] . "</td>";
+									echo "<td>" . $row['author'] . "</td>";
+									echo "<td>" . $row['cost'] . "</td>";
+									echo "<td>" . $row['pub_date'] . "</td>";
+									echo "</tr>";
+								}
+								echo "</table>";
+								// Free result set
+								$result->free();
+							} else{
+								echo "No records matching your query were found.";
+								}
+						} else{
+							echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+							}
+ 
+					// Close connection
+					$conn->close();
+					?>
+				</td>
+			</tr>
+			<tr>
+				<td>Product ID: </td>
+				<td><input type="text" name="selected_id" ></td>
+			<tr>
 			<tr>
 				<td>Upload image: </td>
 				<td><input type="file" onchange="readURL(this)" name="photo" /></td>
@@ -112,10 +157,10 @@ Don't have an account yet ?
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" value="Add" ></td>
+				<td><input type="submit" value="Edit" ></td>
 			</tr>
 		</form>
 	</table>
-</dive>
+</div>
 </body>
 </html>

@@ -168,9 +168,11 @@ Amadeus: Online Comic and Manga Shop <img height="100px" width="100x" src="coffe
 					}
 					?>
 					<tr>
+						<form action = "order.php" method = "post">
 						<td colspan="3" align="right">Total</td>
 						<td align="right">Php<?php echo number_format($total, 2)  ?></td>
-						<td></td>
+						<td><input type="submit" class="btn btn-success" value="Check Out" ></td>
+						</form>
 					</tr>
 					<?php
 				}

@@ -1,6 +1,6 @@
 <html>
 <?php include 'css.php';?>
-<head><meta http-equiv="refresh" content="3;url=addProduct.php" /></head>
+<head><meta http-equiv="refresh" content="100;url=addProduct.php" /></head>
 <?php
 $servername = "localhost";
 $username = "root";
@@ -13,15 +13,12 @@ if($conn -> connect_error){
 
 $photo = "";
  $title = $author = $cost = $pub_date = "";
+ $selected_id = "";
 
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
-		$uploaddir = '/webdev-master/';
-		$uploadfile = $uploaddir. basename($_FILES['photo']['name']);
-		$title = valid_input($_POST["title"]);
-		$author = valid_input($_POST["author"]);
-		$cost = valid_input($_POST["cost"]);
-		$pub_date = valid_input($_POST["pub_date"]);
+		$uploaddir = '/webdev-master/';;
+		$selected_id = valid_input($_POST["selected_id"]);
 	}
 	
 	
@@ -44,13 +41,11 @@ $photo = "";
 	  
 
 
-$sql = "INSERT INTO products(Photo,
-title,author,cost, pub_date) VALUES('".$uploadfile."','".$title."','".$author."',
- '".$cost."','".$pub_date."');";
+$sql = "DELETE FROM products WHERE prod_id = ".$selected_id.";";
 	  
 	  
 	  if($conn->query($sql) === TRUE ){
-		echo "Add Product Success <br>";
+		echo "Product Successfuly Removed <br>";
 		}else {
 		echo "Error " .$sql."<br>". $conn->error;
 		}
